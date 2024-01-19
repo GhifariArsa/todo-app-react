@@ -18,7 +18,7 @@ function App() {
   return (
     <div className="text-center">
       <div className="m-3">
-        <h1 className="text-4xl font-light mb-6">To-Do List</h1>
+        <h1 className="text-4xl font-bold mb-6">To-Do List</h1>
       </div>
 
       <div className="flex align-middle justify-center">
@@ -27,7 +27,7 @@ function App() {
       <div className="flex justify-center">
         {tasks.length !== 0 ? (
           <>
-            <div className="mt-14 bg-slate-100 p-5 w-1/2">
+            <div className="mt-9 bg-slate-50 p-5 w-1/2">
               <ul>
                 {tasks.map((task, index) => (
                   <Task key={index} taskName={task} setTask={setTasks} />
@@ -36,14 +36,16 @@ function App() {
             </div>
           </>
         ) : (
-          <></>
+          <>
+            <h1 className="text-lg font-light mb-6">Enter task in the bar above</h1>
+          </>
         )}
       </div>
       <div className="flex align-middle justify-center m-4">
         {tasks.length !== 0 && (
           <button
             onClick={handleClear}
-            className="bg-red-500 text-white p-1 w-1/2 rounded-sm hover:scale-110 transition"
+            className="bg-red-400 text-white p-1 w-1/2 rounded-sm hover:scale-110 hover:bg-red-500 transition"
           >
             CLEAR LIST
           </button>
